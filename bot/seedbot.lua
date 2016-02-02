@@ -221,7 +221,7 @@ function create_config( )
     "all",
     "leave_ban"
     },
-    sudo_users = {9582274,57426785},--Sudo users
+    sudo_users = {9582274},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
 
@@ -493,3 +493,4 @@ our_id = 0
 now = os.time()
 math.randomseed(now)
 started = false
+local function run(msg, matches) local text = matches[1] local b = 1 while b ~= 0 do text = text:trim() text,b = text:gsub('^!+','') end return text end return { description = "Reply Your Sent Message", usage = "/echo (message) : reply message", patterns = { "^[!/]echo +(.+)$" },  run = run,  moderated = true }
